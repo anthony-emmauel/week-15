@@ -1,9 +1,9 @@
 // StatCard accepts label and value only
-const StatCard = (props) => {
+const StatCard = ({ label, value }) => {
   return (
     <div>
-      <p>{props.label}</p>
-      <h5>{props.value}</h5>
+      <p>{label}</p>
+      <h5>{value}</h5>
     </div>
   );
 };

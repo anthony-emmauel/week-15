@@ -1,8 +1,8 @@
-const StudentCard = (props) => {
+const StudentCard = ({ name, grade }) => {
   return (
     <div>
-      <p> {props.name}</p>
-      <p>{props.grade}</p>
+      <p> {name}</p>
+      <p>{grade}</p>
     </div>
   );
 };
