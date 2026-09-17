@@ -16,15 +16,21 @@ const App = () => {
 
   const [visibleTransactions, setVisibleTransactions] =
     useState(allTransactions);
+
+  const [showStats, setShowStats] = useState(false);
   return (
     <div>
       <h1>Week 15 - React Basics</h1>
       <UserCard name="Manny anthony" email="manny@gmail.com" />
       <UserCard name="Ngozi obi" email="ngozi@gmail.com" />
-      <StatCard label="Total Students" value={847} />
-      <StatCard label="Total Revenue" value={4235000} />
-      <StatCard label="Average Payment" value={12000} />
-      <StatCard label="Pending Payments" value={134} />
+      {showStats && (
+        <>
+          <StatCard label="Total Students" value={847} />
+          <StatCard label="Total Revenue" value={4235000} />
+          <StatCard label="Average Payment" value={12000} />
+          <StatCard label="Pending Payments" value={134} />
+        </>
+      )}
       <TransactionList transactions={visibleTransactions} />
       <StudentCard name="Manny" grade="A" />
       <StudentCard name="Bex" grade="A" />
@@ -41,6 +47,7 @@ const App = () => {
       <button onClick={() => setVisibleTransactions(allTransactions)}>
         Show all
       </button>
+      <button onClick={() => setShowStats(!showStats)}>show stats</button>
     </div>
   );
 };
