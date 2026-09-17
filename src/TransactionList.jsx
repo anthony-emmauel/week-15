@@ -1,8 +1,8 @@
 const TransactionList = ({ transactions }) => {
   return (
     <ul>
-      {transactions.map((transaction) => (
-        <li key={transaction.id}>
+      {transactions.map((transaction, i) => (
+        <li key={i}>
           {transaction.studentName} - {transaction.amountPaid}
         </li>
       ))}
