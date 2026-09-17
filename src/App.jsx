@@ -2,6 +2,7 @@ import UserCard from "./UserCard";
 import StatCard from "./StatCard";
 import TransactionList from "./TransactionList";
 import StudentCard from "./StudentCard";
+import Counter from "./Counter";
 
 const transactions = [
   { id: 1, studentName: "Adaeze Okonkwo", amountPaid: 45000, owing: false },
@@ -24,6 +25,7 @@ const App = () => {
       <TransactionList transactions={transactions} />
       <StudentCard name="Manny" grade="A" />
       <StudentCard name="Bex" grade="A" />
+      <Counter />
     </div>
   );
 };
