@@ -3,6 +3,7 @@ import StatCard from "./StatCard";
 import TransactionList from "./TransactionList";
 import StudentCard from "./StudentCard";
 import Counter from "./Counter";
+import UserList from "./UseList";
 import { useState } from "react";
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
         Show all
       </button>
       <button onClick={() => setShowStats(!showStats)}>show stats</button>
+      <UserList />
     </div>
   );
 };
