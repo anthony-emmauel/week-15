@@ -6,22 +6,24 @@ const UserList = () => {
   const [error, setEror] = useState(null);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users123")
-      .then((response) => {
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/users123",
+        );
         if (!response.ok) {
           throw new Error("Request failed");
         }
-        return response.json();
-      })
-      .then((data) => {
+        const data = await response.json();
         setUser(data);
+      } catch (err) {
+        setEror("Something went wrong. Please try again.");
+      } finally {
         setLoading(false);
-      })
+      }
+    };
 
-      .catch(() => {
-        setEror("Something went wrong. Please try again");
-        setLoading(false);
-      });
+    fetchUsers();
   }, []);
 
   if (loading) {
